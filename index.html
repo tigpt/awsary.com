@@ -1,0 +1,37 @@
+<!doctype html>
+<html amp lang="en">
+  <head>
+    <meta charset="utf-8">
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <title>AWSary.com - AWS Dictionary</title>
+    <meta name="description" content="AWSary.com is a website that provides a dictionary of AWS services and their usage. It also provides a list of AWS resources and their usage.">
+    <link rel="canonical" href="https://amp.dev/documentation/guides-and-tutorials/start/create/basic_markup/">
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+    <!-- import amp componentes -->
+    <script async custom-element="amp-autocomplete" src="https://cdn.ampproject.org/v0/amp-autocomplete-0.1.js"></script>
+    <script async custom-element="amp-form" src="https://cdn.ampproject.org/v0/amp-form-0.1.js"></script>
+    <script async custom-element="amp-bind" src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"></script>
+    <script async custom-template="amp-mustache" src="https://cdn.ampproject.org/v0/amp-mustache-0.2.js"></script>
+  </head>
+  <body>
+    <h1 id="hello">Hello AWSary.com World!</h1>
+    <p> Type any AWS term or service bellow:</p>
+    <form class="sample-form" method="post" action-xhr="https://amp.dev/documentation/examples/api/echo" target="_top">
+        <amp-autocomplete filter="substring">
+          <input>
+          <script type="application/json">
+            {
+              "items": ["ec2", "s3", "sqs"]
+            }
+          </script>
+        </amp-autocomplete>
+      </form>
+      <p>Now lets try with external datasource</p>
+      <form class="sample-form" method="post" action-xhr="https://amp.dev/documentation/examples/api/echo" target="_top">
+        <amp-autocomplete filter="substring" src="https://static.tig.pt/awsary/amp-aws-autocomplete-test.json">
+          <input>
+        </amp-autocomplete>
+      </form>
+  </body>
+</html>
